@@ -1,1 +1,5 @@
-type Zip<T, U> = any
+type Zip<T, U> = T extends [infer F, ...infer R]
+  ? U extends [infer u_F, ...infer u_R]
+    ? [[F, u_F], ...Zip<R, u_R>]
+    : []
+  : []
