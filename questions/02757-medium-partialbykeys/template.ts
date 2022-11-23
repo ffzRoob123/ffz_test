@@ -4,7 +4,7 @@
 type Merge1<T> = {
   [Key in keyof T]: T[Key]
 }
-type PartialByKeys<T, K = keyof T> = Merge1<
+type PartialByKeys<T, K extends keyof T = keyof T> = Merge1<
   {
     [Key in keyof T as Key extends K ? Key : never]?: T[Key]
   } & {
