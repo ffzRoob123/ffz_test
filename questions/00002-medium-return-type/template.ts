@@ -3,3 +3,4 @@ type MyReturnType<T extends (...arg: any) => any> = T extends (
 ) => infer p
   ? p
   : never
+// zhege s ces 
